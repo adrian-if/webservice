@@ -4,14 +4,17 @@ Date de création : 10/04/2024
 
 ## Introduction
 
-L'API Ici Formation est conçue pour permettre aux clients de recevoir les leads de manière automatisée et en temps réel. Cette documentation vise à expliquer comment intégrer et utiliser l'API POST pour transmettre des leads.
-Cette documentation est à destination de l'équipe technique du client souhaitant réceptionner les leads.
+L'API Ici Formation est conçue pour permettre aux clients de recevoir les leads de manière automatisée et en temps réel. 
+Cette documentation vise à expliquer comment intégrer et utiliser l'API, elle est à destination de l'équipe technique du client souhaitant réceptionner les leads.
 
-Si vous n'avez pas la possibilité de créer une url de réception pour réceptionner les leads vous pouvez utiliser un service tiers comme Zapier ou si vous utilisez le CRM Hubspot consultez la documentation correspondante. 
+Si vous n'avez pas la possibilité de créer une url de réception vous pouvez utiliser un service tiers comme Zapier ou le CRM Hubspot.
 
-## Méthode HTTP
+Documentation Hubspot : https://github.com/adrian-if/webservice/blob/main/hubspot.md
 
-La méthode utilisée pour transmettre les données est POST.
+## Fonctionnement
+
+Lorsque votre centre reçoit un lead sur le site https://www.iciformation.fr/ nous vérifions si une API est en place.
+Si oui, nous envoyons une requête POST à votre URL de réception avec les données fournies plus bas.
 
 ## Format des données
 
@@ -49,21 +52,17 @@ Les données sont envoyées au format JSON. Voici la structure attendue pour le 
 - `client`: Nom de la société cliente.
 - `id_client`: Identifiant unique du client.
 
+## Sécurité
+
+Afin de garantir la sécurité de votre API nous conseillons de mettre en place une authorization par Bearer Token, API Key, Token ou X Token.
+Par la suite vous pouvez nous communiquer l'authentification.
+
 ## Traitement des Réponses
 
 ### Réussite
 
 En cas de succès, l'API renvoie un statut HTTP 200 avec un corps de réponse vide.
 
-### Erreurs
-
-L'API peut renvoyer divers codes d'erreur, y compris :
-
-- `400 Bad Request` : Le corps de la requête est mal formé ou incomplet.
-- `401 Unauthorized` : La clé API est manquante ou invalide.
-- `500 Internal Server Error` : Une erreur côté serveur a empêché le traitement de la requête.
-
-Pour chaque erreur, un message explicatif est fourni pour aider à diagnostiquer le problème.
 
 ## Exemple de requête cURL
 
