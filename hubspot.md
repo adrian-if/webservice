@@ -38,6 +38,7 @@ Voici les informations supplémentaires que nous pouvons envoyer :
 * Nom de la formation
 * Préférence de rappel du contact
 * Civilité
+* Ville
 
 
 ## Support
