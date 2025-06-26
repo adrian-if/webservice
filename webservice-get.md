@@ -1,0 +1,91 @@
+# Documentation API GET - Ici Formation V1
+Date de création : 26/06/2025
+
+Date de dernière modification : 26/06/2025
+
+## 📘 Vue d'ensemble
+
+L'API *Ici Formation* permet de récupérer automatiquement les leads générés sur iciformation.fr. Cette documentation vous guide dans l'intégration du point d'accès permettant de **lister les mises en relation** effectuées via notre plateforme.
+
+## ⚙️ Fonctionnement
+
+1. Un utilisateur remplit un formulaire sur iciformation.fr  
+2. Le lead est traité par nos systèmes internes  
+3. Vous pouvez consulter la liste des leads en appelant notre **API REST sécurisée**
+
+## Étapes de mise en place
+- Configurer votre endpoint
+- Nous vous communiquons un token d'authentification
+- Effectuer un test avec notre équipe
+- Vérifier la réception des données
+
+## 🔌 Options d'intégration
+
+### Pour les développeurs
+
+- Intégration directe via **API REST** en `GET`  
+- Authentification requise par **Bearer Token**
+
+### Pour les non-développeurs
+
+- Intégration indirecte via des outils comme Zapier, CRM ou Hubspot (version POST uniquement – [voir cette documentation](https://github.com/adrian-if/webservice/blob/main/hubspot.md))
+
+---
+
+## 🛠 Endpoint disponible
+
+### `GET /webservice/leads`
+
+Permet de récupérer la liste des leads (mises en relation) sur une période donnée.
+
+#### Paramètres
+
+| Paramètre   | Type     | Obligatoire | Description                                                  |
+|-------------|----------|-------------|--------------------------------------------------------------|
+| `dateStart` | string   | Non         | Date de début au format `YYYY-MM-DD`. Défaut : -3 mois       |
+| `dateEnd`   | string   | Non         | Date de fin au format `YYYY-MM-DD`. Défaut : aujourd'hui     |
+
+---
+
+## 📥 Authentification
+ 
+Le token est à transmettre via l’en-tête suivant :
+
+```http
+Authorization: Bearer <votre_token>
+
+## Structure des données
+
+Nous transmettons la réponse suivante :
+
+[
+  {
+    "nom": "Doe",
+    "prenom": "John",
+    "civilite": "M.",
+    "tel": "0102030405",
+    "email": "john.doe@example.com",
+    "ville": "paris",
+    "code_postal": "75001",
+    "statut": "prospect",
+    "horaire_rappel": "après-midi",
+    "formation": "Développement Web",
+    "client": "XYZ Formations",
+    "id_client": "1234",
+    "date_creation": "2024-06-25T15:42:12+00:00"
+  }
+]
+
+🔁 Traitement des réponses
+Code HTTP	Signification
+200	Succès – données retournées
+401	Authentification manquante ou invalide
+403	Accès interdit (API désactivée ou méthode bloquée)
+429	Trop de requêtes (limite atteinte)
+500	Erreur interne (ex. : paramètre date invalide)
+
+## Support
+
+Pour toute question ou assistance technique, veuillez contacter le support d'Ici Formation à l'adresse tech@iciformation.fr ou a.stoj@iciformation.fr
+
+---
