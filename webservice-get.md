@@ -54,6 +54,42 @@ Le token est à transmettre via l’en-tête suivant :
 
 Authorization: Bearer <votre_token>
 
+### Exemple de réponse
+
+```json
+[
+  {
+    "nom": "Martin",
+    "prenom": "Lucas",
+    "civilite": "M.",
+    "tel": "0600000001",
+    "email": "lucas.martin@example.com",
+    "ville": "grenoble",
+    "code_postal": "38000",
+    "statut": "Salarié(e) du public",
+    "horaire_rappel": "14H-16H",
+    "formation": "Gestion de projet",
+    "client": "ABC Formations",
+    "id_client": "9876",
+    "date_creation": "2025-06-26T11:07:24+00:00"
+  },
+  {
+    "nom": "Dubois",
+    "prenom": "Emma",
+    "civilite": "Mme",
+    "tel": "0600000002",
+    "email": "emma.dubois@example.com",
+    "ville": "lyon",
+    "code_postal": "69001",
+    "statut": "Demandeur d'emploi",
+    "horaire_rappel": "matin",
+    "formation": "Informatique",
+    "client": "ABC Formations",
+    "id_client": "9876",
+    "date_creation": "2025-06-25T09:34:50+00:00"
+  }
+]
+
 ## Support
 
 Pour toute question ou assistance technique, veuillez contacter le support d'Ici Formation à l'adresse tech@iciformation.fr ou a.stoj@iciformation.fr
