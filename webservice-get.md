@@ -89,7 +89,3 @@ Authorization: Bearer <votre_token>
     "date_creation": "2025-06-25T09:34:50+00:00"
   }
 ]
-
-## Support
-
-Pour toute question ou assistance technique, veuillez contacter le support d'Ici Formation à l'adresse tech@iciformation.fr ou a.stoj@iciformation.fr
