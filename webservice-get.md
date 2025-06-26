@@ -23,7 +23,8 @@ L'API *Ici Formation* permet de récupérer automatiquement les leads générés
 
 ### Pour les développeurs
 
-- Intégration directe via **API REST** en `GET`  
+- Intégration directe via **API REST** en `GET`
+- - Intégration directe via [**API REST** en `POST `](https://github.com/adrian-if/webservice/blob/main/default.md)  
 - Authentification requise par **Bearer Token**
 
 ### Pour les non-développeurs
@@ -34,9 +35,10 @@ L'API *Ici Formation* permet de récupérer automatiquement les leads générés
 
 ## 🛠 Endpoint disponible
 
-### `GET /webservice/leads`
+### `GET https://www.iciformation.fr/api/webservice/leads`
 
 Permet de récupérer la liste des leads (mises en relation) sur une période donnée.
+Par défaut nous envoyons les mises en relation des 3 derniers mois.
 
 #### Paramètres
 
@@ -51,38 +53,7 @@ Permet de récupérer la liste des leads (mises en relation) sur une période do
  
 Le token est à transmettre via l’en-tête suivant :
 
-```http
 Authorization: Bearer <votre_token>
-
-## Structure des données
-
-Nous transmettons la réponse suivante :
-
-[
-  {
-    "nom": "Doe",
-    "prenom": "John",
-    "civilite": "M.",
-    "tel": "0102030405",
-    "email": "john.doe@example.com",
-    "ville": "paris",
-    "code_postal": "75001",
-    "statut": "prospect",
-    "horaire_rappel": "après-midi",
-    "formation": "Développement Web",
-    "client": "XYZ Formations",
-    "id_client": "1234",
-    "date_creation": "2024-06-25T15:42:12+00:00"
-  }
-]
-
-🔁 Traitement des réponses
-Code HTTP	Signification
-200	Succès – données retournées
-401	Authentification manquante ou invalide
-403	Accès interdit (API désactivée ou méthode bloquée)
-429	Trop de requêtes (limite atteinte)
-500	Erreur interne (ex. : paramètre date invalide)
 
 ## Support
 
