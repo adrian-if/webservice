@@ -23,9 +23,8 @@ L'API *Ici Formation* permet de récupérer automatiquement les leads générés
 
 ### Pour les développeurs
 
-- Intégration directe via **API REST** en `GET`
-- - Intégration directe via [**API REST** en `POST `](https://github.com/adrian-if/webservice/blob/main/default.md)  
-- Authentification requise par **Bearer Token**
+- Intégration directe via **API REST** en `GET` (cette documentation)
+- Intégration directe via [**API REST** en `POST `](https://github.com/adrian-if/webservice/blob/main/default.md)  
 
 ### Pour les non-développeurs
 
