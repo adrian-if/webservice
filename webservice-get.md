@@ -93,5 +93,3 @@ Authorization: Bearer <votre_token>
 ## Support
 
 Pour toute question ou assistance technique, veuillez contacter le support d'Ici Formation à l'adresse tech@iciformation.fr ou a.stoj@iciformation.fr
-
----
